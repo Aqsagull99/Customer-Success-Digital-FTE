@@ -1,0 +1,822 @@
+[
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-39A727D3",
+    "customer_id": "smoke@example.com",
+    "issue": "Refund not processed",
+    "priority": "high",
+    "channel": "email"
+  },
+  {
+    "type": "escalate_to_human",
+    "ticket_id": "INC-39A727D3",
+    "reason": "billing dispute in smoke test",
+    "escalation_id": "ESC-5A8F98F7"
+  },
+  {
+    "type": "send_response",
+    "ticket_id": "INC-39A727D3",
+    "channel": "email",
+    "message": "Hello,\n\nWe have escalated your request.\n\nBest regards,\nCustomer Success Team"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-CEB6A57B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-A9E3D606",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-AA594D15",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-FB2E9452",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-750F9906",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-FD001201",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-4DE4A545",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-6F40BABD",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-728857B3",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-C3626D43",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-D55D9A41",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-1CCF82A8",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-86BDC3F7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-1F046EA1",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-67861266",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-003611FF",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-3CE9B0F8",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-2DFC9C74",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-09ECF8CD",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-402BB1D4",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-7F15514B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-FB53D7AA",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-FD9F9B1D",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-F2E5545E",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-2D202672",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-4D404CA6",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-D4602F84",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-BB7B5FAB",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-21B686FF",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-1D457071",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-EEF5CDE7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-DD6AAB2D",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-986A8F03",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-05347E75",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-0E662D61",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-2212D7A6",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-9F4012DC",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-6FEEF614",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-50D18F03",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-34573E7B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-8A57AB5F",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-22A5043B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-BE8F6A12",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-D01C9F89",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-B453725B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-B2549508",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-C53D1B4B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-69F3738D",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-3DC5EEC2",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-5244F546",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-90B00AEA",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-35EB3FB7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-4F08417F",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-DB17F944",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-C595A83F",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-FC15E223",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-69D3773C",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-A35A2996",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-1C5F16F4",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-88818C8A",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-BCAB4F42",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-E165402D",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-905BFB10",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-8272BA76",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-35B434A1",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-303A0F35",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-974C64D0",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-B2BB8C5B",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-FE994AAF",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-791DF5E3",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-F218231F",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-DA11FB8C",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-1980479C",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-F0480469",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-9B026007",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-C9360181",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-805437D8",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-DE1593B8",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-F4074623",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-9975C390",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-C5B1A16D",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-99884E5F",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-8DAB5D13",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-CB2F58AA",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-3971FF14",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-422B2BF5",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-6AEF24BC",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-223842B8",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-6507BAA7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-BEDFB4BD",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-87D4083F",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-EE2BBBF7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-19086CBD",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-77D207B2",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-10C095B7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-AFF55DE7",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-8D220C1C",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-74DB6A92",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-4FAFE8B4",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  },
+  {
+    "type": "create_ticket",
+    "ticket_id": "INC-91BCCAF5",
+    "customer_id": "bench@test.com",
+    "issue": "test issue",
+    "priority": "P2",
+    "channel": "email"
+  }
+]

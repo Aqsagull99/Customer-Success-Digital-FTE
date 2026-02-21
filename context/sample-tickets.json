@@ -1,0 +1,652 @@
+[
+  {
+    "ticket_id": "T-2001",
+    "channel": "email",
+    "customer_id": "ali.khan@example.com",
+    "subject": "Password reset link expired",
+    "message": "Hello support team, each password reset link expires within seconds. Please advise a reliable reset process.",
+    "priority_hint": "medium",
+    "expected_outcome": "Provide account recovery troubleshooting and validate token expiry settings.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2002",
+    "channel": "email",
+    "customer_id": "sara.noor@example.com",
+    "subject": "Invoice mismatch for January",
+    "message": "My January invoice shows 14 seats while our active users were 9. Please review and correct the bill.",
+    "priority_hint": "high",
+    "expected_outcome": "Open billing investigation and route to human billing specialist.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2003",
+    "channel": "email",
+    "customer_id": "hamza.it@example.com",
+    "subject": "CSV export failing on reports page",
+    "message": "Weekly analytics export returns a 500 error when downloading CSV from Reports. This is extremely frustrating for our operations team.",
+    "priority_hint": "high",
+    "expected_outcome": "Collect timestamp and org id, provide workaround, escalate as technical bug.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2004",
+    "channel": "email",
+    "customer_id": "nida.pm@example.com",
+    "subject": "Feature request: dark mode",
+    "message": "Our team would like a dark mode option to reduce eye strain during night shifts.",
+    "priority_hint": "low",
+    "expected_outcome": "Acknowledge feature request and log product feedback ticket.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2005",
+    "channel": "email",
+    "customer_id": "osama.ops@example.com",
+    "subject": "Need SSO setup steps",
+    "message": "Please share complete SSO setup instructions for Google Workspace and Okta.",
+    "priority_hint": "medium",
+    "expected_outcome": "Provide setup guide and prerequisite checklist.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2006",
+    "channel": "email",
+    "customer_id": "ayesha.finance@example.com",
+    "subject": "Charged twice this month",
+    "message": "We were charged twice for the same subscription cycle. Please reverse one transaction immediately.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate payment dispute/refund case to human billing queue.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2007",
+    "channel": "email",
+    "customer_id": "zain.dev@example.com",
+    "subject": "Webhook retries delayed",
+    "message": "Webhook callbacks are delayed by 10-15 minutes, causing sync issues in our internal tools.",
+    "priority_hint": "medium",
+    "expected_outcome": "Capture logs and escalate potential platform reliability issue.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2008",
+    "channel": "email",
+    "customer_id": "fatima.hr@example.com",
+    "subject": "How to add team members",
+    "message": "Can you provide exact steps to invite users and assign role-based access?",
+    "priority_hint": "low",
+    "expected_outcome": "Provide role and invitation workflow instructions.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2009",
+    "channel": "email",
+    "customer_id": "imran.legal@example.com",
+    "subject": "Data retention policy confirmation",
+    "message": "We need legal confirmation regarding GDPR retention and deletion timelines for customer data.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate legal/compliance query to human owner.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2010",
+    "channel": "email",
+    "customer_id": "marium.cx@example.com",
+    "subject": "Very disappointed with repeated outages",
+    "message": "This is unacceptable. We lost customer trust due to repeated downtime and no clear RCA. I need a manager now.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate immediately due hostile sentiment and explicit manager request.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2011",
+    "channel": "email",
+    "customer_id": "bilal.support@example.com",
+    "subject": "Can not upload attachments",
+    "message": "PDF uploads fail silently in ticket comments. This blocks our support process.",
+    "priority_hint": "high",
+    "expected_outcome": "Log bug, provide temporary workaround, escalate if blocking workflow.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2012",
+    "channel": "email",
+    "customer_id": "hina.ops@example.com",
+    "subject": "API rate limit clarification",
+    "message": "Please clarify default API rate limits and burst behavior per workspace.",
+    "priority_hint": "low",
+    "expected_outcome": "Share API limits and best practices.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2013",
+    "channel": "email",
+    "customer_id": "rizwan.admin@example.com",
+    "subject": "Need annual plan discount",
+    "message": "Can you offer 25% discount if we switch to annual billing this week?",
+    "priority_hint": "medium",
+    "expected_outcome": "Route pricing negotiation to sales/human team.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2014",
+    "channel": "email",
+    "customer_id": "sadia.qa@example.com",
+    "subject": "Search index missing recent tickets",
+    "message": "Tickets created in last 2 hours are not appearing in search results.",
+    "priority_hint": "medium",
+    "expected_outcome": "Collect evidence and escalate indexing lag issue.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2015",
+    "channel": "email",
+    "customer_id": "yasir.cto@example.com",
+    "subject": "Account locked during incident",
+    "message": "Our admin account got locked and we cannot operate support desk. This is business critical.",
+    "priority_hint": "high",
+    "expected_outcome": "Immediate escalation for critical workflow block.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2016",
+    "channel": "email",
+    "customer_id": "noor.pm@example.com",
+    "subject": "Feature request: bulk ticket close",
+    "message": "Please add bulk close action for resolved tickets to save manual effort.",
+    "priority_hint": "low",
+    "expected_outcome": "Capture feature request and share current alternatives.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2017",
+    "channel": "email",
+    "customer_id": "farhan.ops@example.com",
+    "subject": "Need onboarding training resources",
+    "message": "Could you send onboarding videos/docs for new customer success agents?",
+    "priority_hint": "low",
+    "expected_outcome": "Share learning resources and links.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-2018",
+    "channel": "email",
+    "customer_id": "laiba.payments@example.com",
+    "subject": "Refund not processed after 10 days",
+    "message": "Refund still not processed after 10 days. This delay is unacceptable and hurting our finance closure.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate refund delay and include transaction references.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2019",
+    "channel": "email",
+    "customer_id": "kashif.sec@example.com",
+    "subject": "Possible unauthorized login",
+    "message": "We observed suspicious login activity from unknown IP addresses. Please investigate immediately.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate potential security incident immediately.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-2020",
+    "channel": "email",
+    "customer_id": "uzma.ops@example.com",
+    "subject": "Need workflow automation examples",
+    "message": "Can you share examples for automating ticket routing by tags and priority?",
+    "priority_hint": "low",
+    "expected_outcome": "Provide product guidance and examples.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3001",
+    "channel": "whatsapp",
+    "customer_id": "+1555100001",
+    "subject": "",
+    "message": "login not working since morning. help pls",
+    "priority_hint": "high",
+    "expected_outcome": "Quick triage and escalation if critical workflow blocked.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3002",
+    "channel": "whatsapp",
+    "customer_id": "+1555100002",
+    "subject": "",
+    "message": "why charged twice?? fix now",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate payment dispute/refund case immediately.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3003",
+    "channel": "whatsapp",
+    "customer_id": "+1555100003",
+    "subject": "",
+    "message": "how to export weekly report",
+    "priority_hint": "low",
+    "expected_outcome": "Send concise steps for export.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3004",
+    "channel": "whatsapp",
+    "customer_id": "+1555100004",
+    "subject": "",
+    "message": "need dark mode feature please",
+    "priority_hint": "low",
+    "expected_outcome": "Acknowledge feature request and log feedback.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3005",
+    "channel": "whatsapp",
+    "customer_id": "+1555100005",
+    "subject": "",
+    "message": "api webhook failing again. super frustrating",
+    "priority_hint": "high",
+    "expected_outcome": "Gather error details and escalate recurring integration issue.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3006",
+    "channel": "whatsapp",
+    "customer_id": "+1555100006",
+    "subject": "",
+    "message": "can i get annual discount?",
+    "priority_hint": "medium",
+    "expected_outcome": "Route pricing negotiation to human sales/billing contact.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3007",
+    "channel": "whatsapp",
+    "customer_id": "+1555100007",
+    "subject": "",
+    "message": "this app is useless today. nothing loads",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate hostile sentiment + possible outage.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3008",
+    "channel": "whatsapp",
+    "customer_id": "+1555100008",
+    "subject": "",
+    "message": "where do i add team members?",
+    "priority_hint": "low",
+    "expected_outcome": "Provide short onboarding instructions.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3009",
+    "channel": "whatsapp",
+    "customer_id": "+1555100009",
+    "subject": "",
+    "message": "need human agent now",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate due explicit human request.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3010",
+    "channel": "whatsapp",
+    "customer_id": "+1555100010",
+    "subject": "",
+    "message": "billing page not opening and this is really frustrating",
+    "priority_hint": "medium",
+    "expected_outcome": "Try troubleshooting and escalate if persistent.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3011",
+    "channel": "whatsapp",
+    "customer_id": "+1555100011",
+    "subject": "",
+    "message": "report csv download broken",
+    "priority_hint": "medium",
+    "expected_outcome": "Provide workaround and open bug ticket.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3012",
+    "channel": "whatsapp",
+    "customer_id": "+1555100012",
+    "subject": "",
+    "message": "thanks issue fixed",
+    "priority_hint": "low",
+    "expected_outcome": "Acknowledge and close ticket politely.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3013",
+    "channel": "whatsapp",
+    "customer_id": "+1555100013",
+    "subject": "",
+    "message": "cant reset password link expired",
+    "priority_hint": "medium",
+    "expected_outcome": "Provide reset flow and verify email delivery.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3014",
+    "channel": "whatsapp",
+    "customer_id": "+1555100014",
+    "subject": "",
+    "message": "refund pending 2 weeks. this is ridiculous",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate refund delay with urgency.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3015",
+    "channel": "whatsapp",
+    "customer_id": "+1555100015",
+    "subject": "",
+    "message": "is there a way to auto tag tickets?",
+    "priority_hint": "low",
+    "expected_outcome": "Share automation setup guidance.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3016",
+    "channel": "whatsapp",
+    "customer_id": "+1555100016",
+    "subject": "",
+    "message": "your service ruined our workflow today",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate hostile sentiment and capture impact.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3017",
+    "channel": "whatsapp",
+    "customer_id": "+1555100017",
+    "subject": "",
+    "message": "need invoice copy for feb",
+    "priority_hint": "low",
+    "expected_outcome": "Share invoice retrieval steps.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3018",
+    "channel": "whatsapp",
+    "customer_id": "+1555100018",
+    "subject": "",
+    "message": "security issue maybe hacked account",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate suspected security incident immediately.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-3019",
+    "channel": "whatsapp",
+    "customer_id": "+1555100019",
+    "subject": "",
+    "message": "pls add bulk close option",
+    "priority_hint": "low",
+    "expected_outcome": "Log feature request and acknowledge.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-3020",
+    "channel": "whatsapp",
+    "customer_id": "+1555100020",
+    "subject": "",
+    "message": "still broken after 2 tries. who can actually fix this?",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate repeated unresolved issue + human request tone.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4001",
+    "channel": "web_form",
+    "customer_id": "umair@example.com",
+    "subject": "Unable to connect Slack integration",
+    "message": "Integration test fails with invalid signature error despite correct webhook URL.",
+    "priority_hint": "medium",
+    "expected_outcome": "Provide integration checklist and escalate if validation bug persists.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4002",
+    "channel": "web_form",
+    "customer_id": "noreen@example.com",
+    "subject": "Request for refund on duplicate payment",
+    "message": "Two payments were processed for one subscription. Please issue refund for duplicate charge.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate billing dispute/refund immediately.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4003",
+    "channel": "web_form",
+    "customer_id": "adnan@example.com",
+    "subject": "How to configure role permissions",
+    "message": "Please provide steps to create custom roles for support leads and viewers.",
+    "priority_hint": "low",
+    "expected_outcome": "Provide permission setup instructions.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-4004",
+    "channel": "web_form",
+    "customer_id": "rabia@example.com",
+    "subject": "Feature request: SLA dashboard widgets",
+    "message": "Need customizable SLA widgets for different teams and regions.",
+    "priority_hint": "low",
+    "expected_outcome": "Log feature request and capture use case details.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-4005",
+    "channel": "web_form",
+    "customer_id": "saif@example.com",
+    "subject": "Critical outage - dashboard not loading",
+    "message": "Main dashboard has been inaccessible for 40 minutes and operations are blocked.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate immediately as critical workflow block.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4006",
+    "channel": "web_form",
+    "customer_id": "huda@example.com",
+    "subject": "Angry: no one solved this in 3 days",
+    "message": "This is the third time I am reporting the same bug and still no solution. Extremely disappointed.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate due repeated unresolved issue and hostile sentiment.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4007",
+    "channel": "web_form",
+    "customer_id": "waqas@example.com",
+    "subject": "Need migration checklist",
+    "message": "Kindly share best-practice checklist for migrating from legacy ticketing tool.",
+    "priority_hint": "low",
+    "expected_outcome": "Provide migration guidance and resources.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-4008",
+    "channel": "web_form",
+    "customer_id": "saba@example.com",
+    "subject": "Invoice VAT number incorrect",
+    "message": "Our VAT number on generated invoices is wrong and must be corrected for compliance.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate to billing/compliance review.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4009",
+    "channel": "web_form",
+    "customer_id": "junaid@example.com",
+    "subject": "Requesting legal DPA clarification",
+    "message": "Need legal clarification on DPA clauses before renewal.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate legal/compliance query.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4010",
+    "channel": "web_form",
+    "customer_id": "maham@example.com",
+    "subject": "Ticket search latency issue",
+    "message": "Search takes over 20 seconds for simple keyword queries.",
+    "priority_hint": "medium",
+    "expected_outcome": "Capture environment data and escalate performance bug.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4011",
+    "channel": "web_form",
+    "customer_id": "sameer@example.com",
+    "subject": "Feature request: multilingual canned replies",
+    "message": "Please add Urdu/Arabic templates for canned responses.",
+    "priority_hint": "low",
+    "expected_outcome": "Log product enhancement request.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-4012",
+    "channel": "web_form",
+    "customer_id": "amna@example.com",
+    "subject": "Manager escalation requested",
+    "message": "Please have a support manager contact me directly regarding unresolved billing concerns.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate due explicit manager request and billing context.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4013",
+    "channel": "web_form",
+    "customer_id": "talha@example.com",
+    "subject": "API docs unclear for pagination",
+    "message": "Pagination parameters in docs are unclear. Need an example with next cursor.",
+    "priority_hint": "low",
+    "expected_outcome": "Provide docs clarification and examples.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-4014",
+    "channel": "web_form",
+    "customer_id": "minal@example.com",
+    "subject": "Still cannot access account",
+    "message": "After following previous steps, account access still fails and team cannot respond to customers.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate unresolved critical access issue.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-4015",
+    "channel": "web_form",
+    "customer_id": "atif@example.com",
+    "subject": "Need webhook security details",
+    "message": "Share details on webhook signature validation and IP allowlisting recommendations.",
+    "priority_hint": "medium",
+    "expected_outcome": "Provide security best practices and references.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-5001",
+    "channel": "email",
+    "customer_id": "hard1@example.com",
+    "subject": "Love product, billing legal concern",
+    "message": "I genuinely love your platform, but if this billing mess is not fixed by Friday my lawyer will send a notice.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate immediately due legal threat and billing dispute despite positive opening tone.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5002",
+    "channel": "whatsapp",
+    "customer_id": "+1555200002",
+    "subject": "",
+    "message": "this thing is acting up again. vibes are bad rn",
+    "priority_hint": "medium",
+    "expected_outcome": "Ask clarifying questions, flag low confidence, likely technical triage.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-5003",
+    "channel": "web_form",
+    "customer_id": "hard3@example.com",
+    "subject": "Renewal decision update",
+    "message": "Everything is mostly okay. We are quietly piloting a competitor next week in case support stays this slow.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate to retention/human team due churn risk and competitor-switch signal.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5004",
+    "channel": "email",
+    "customer_id": "hard4@example.com",
+    "subject": "Not mad, just confused",
+    "message": "Not mad at all, just confused why my account got locked twice and finance cannot access invoices.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate for critical access and billing impact even with calm wording.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5005",
+    "channel": "whatsapp",
+    "customer_id": "+1555200005",
+    "subject": "",
+    "message": "all good mostly, except you charged us extra lol can u sort it",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate billing dispute; tone is casual but issue is payment-sensitive.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5006",
+    "channel": "web_form",
+    "customer_id": "hard6@example.com",
+    "subject": "Minor note",
+    "message": "No urgent issue. Side note: our compliance team asked for DPA annex wording before procurement approves.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate legal/compliance query despite polite framing.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5007",
+    "channel": "email",
+    "customer_id": "hard7@example.com",
+    "subject": "Quick feedback",
+    "message": "Your team has been kind. Still, if uptime drops one more time we will terminate and migrate this quarter.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate due churn threat/retention risk tied to reliability.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5008",
+    "channel": "whatsapp",
+    "customer_id": "+1555200008",
+    "subject": "",
+    "message": "yaar app scene off hai, pages freeze then chill then freeze",
+    "priority_hint": "medium",
+    "expected_outcome": "Interpret slang as technical reliability issue; low confidence unless clarified.",
+    "should_escalate": false
+  },
+  {
+    "ticket_id": "T-5009",
+    "channel": "web_form",
+    "customer_id": "hard9@example.com",
+    "subject": "Invoice clarification",
+    "message": "Could you kindly explain this extra line item? If unresolved, procurement will move spend to another vendor.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate due billing ambiguity plus competitor/vendor switch risk.",
+    "should_escalate": true
+  },
+  {
+    "ticket_id": "T-5010",
+    "channel": "email",
+    "customer_id": "hard10@example.com",
+    "subject": "Thanks but one concern",
+    "message": "Great product overall. Also, security said your webhook signatures look weak, so legal may pause rollout.",
+    "priority_hint": "high",
+    "expected_outcome": "Escalate for potential security/compliance blocker.",
+    "should_escalate": true
+  }
+]

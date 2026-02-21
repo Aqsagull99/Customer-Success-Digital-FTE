@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 << 'PYEOF'\nimport json\n\nwith open\\('/home/aqsagulllinux/.claude/projects/-home-aqsagulllinux-projects-CRM-Digital-FTE--Hackathon-5/d553afc4-962b-4684-b3e6-796b48718c0f.jsonl', 'r'\\) as f:\n    lines = f.readlines\\(\\)\n\n# Get the last 20 lines that are assistant messages\nfor line in lines[-20:]:\n    try:\n        obj = json.loads\\(line\\)\n        if obj.get\\('type'\\) == 'assistant':\n            content = obj.get\\('message', {}\\).get\\('content', ''\\)\n            if isinstance\\(content, list\\):\n                for block in content:\n                    if isinstance\\(block, dict\\) and block.get\\('type'\\) == 'text' and len\\(block.get\\('text',''\\)\\) > 30:\n                        print\\(block['text'][:1500]\\)\n                        print\\(\"===BLOCK===\"\\)\n    except:\n        pass\nPYEOF)"
+    ]
+  }
+}

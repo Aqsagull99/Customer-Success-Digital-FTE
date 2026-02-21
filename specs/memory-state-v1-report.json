@@ -1,0 +1,819 @@
+{
+  "total_events_processed": 67,
+  "total_customers": 66,
+  "customers_with_channel_switch": 1,
+  "escalated_customers": 42,
+  "sample_cross_channel_customer": {
+    "message_count": 2,
+    "channels_seen": [
+      "whatsapp",
+      "email"
+    ],
+    "channel_switches": 1,
+    "avg_sentiment": 0.4,
+    "top_topics": [
+      "access",
+      "reliability"
+    ],
+    "resolution_status": "escalated"
+  },
+  "customer_states": {
+    "ali.khan@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access"
+      ],
+      "resolution_status": "solved"
+    },
+    "sara.noor@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "hamza.it@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    },
+    "nida.pm@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "feature_request"
+      ],
+      "resolution_status": "solved"
+    },
+    "osama.ops@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "ayesha.finance@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "zain.dev@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "fatima.hr@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access"
+      ],
+      "resolution_status": "solved"
+    },
+    "imran.legal@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "marium.cx@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    },
+    "bilal.support@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "hina.ops@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "rizwan.admin@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "sadia.qa@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "yasir.cto@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access"
+      ],
+      "resolution_status": "escalated"
+    },
+    "noor.pm@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "feature_request"
+      ],
+      "resolution_status": "solved"
+    },
+    "farhan.ops@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "laiba.payments@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "kashif.sec@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "security",
+        "access"
+      ],
+      "resolution_status": "escalated"
+    },
+    "uzma.ops@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100001": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100002": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100003": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100004": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "feature_request"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100005": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100006": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100007": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100008": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100009": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100010": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100011": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100012": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.7,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100013": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100014": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100015": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100016": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100017": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100018": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.3,
+      "top_topics": [
+        "security"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555100019": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "feature_request"
+      ],
+      "resolution_status": "solved"
+    },
+    "+1555100020": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "umair@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "security"
+      ],
+      "resolution_status": "escalated"
+    },
+    "noreen@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "adnan@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "rabia@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "feature_request"
+      ],
+      "resolution_status": "solved"
+    },
+    "saif@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access",
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    },
+    "huda@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "waqas@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "saba@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "junaid@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "maham@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    },
+    "sameer@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "feature_request"
+      ],
+      "resolution_status": "solved"
+    },
+    "amna@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "talha@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "minal@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "access"
+      ],
+      "resolution_status": "escalated"
+    },
+    "atif@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "security"
+      ],
+      "resolution_status": "solved"
+    },
+    "hard1@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.9,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555200002": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "solved"
+    },
+    "hard3@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "hard4@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing",
+        "access"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555200005": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.7,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "hard6@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "hard7@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.7,
+      "top_topics": [
+        "general"
+      ],
+      "resolution_status": "escalated"
+    },
+    "+1555200008": {
+      "message_count": 1,
+      "channels_seen": [
+        "whatsapp"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "reliability"
+      ],
+      "resolution_status": "solved"
+    },
+    "hard9@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "web_form"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.5,
+      "top_topics": [
+        "billing"
+      ],
+      "resolution_status": "escalated"
+    },
+    "hard10@example.com": {
+      "message_count": 1,
+      "channels_seen": [
+        "email"
+      ],
+      "channel_switches": 0,
+      "avg_sentiment": 0.9,
+      "top_topics": [
+        "security"
+      ],
+      "resolution_status": "escalated"
+    },
+    "cross-channel-demo@example.com": {
+      "message_count": 2,
+      "channels_seen": [
+        "whatsapp",
+        "email"
+      ],
+      "channel_switches": 1,
+      "avg_sentiment": 0.4,
+      "top_topics": [
+        "access",
+        "reliability"
+      ],
+      "resolution_status": "escalated"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "benchmark_date": "2026-02-20",
+  "stage": "Stage 1 - Incubation",
+  "environment": "Python 3.12, Linux WSL2, local execution (no network/API calls)",
+  "dataset": "65 tickets (55 original + 10 hard adversarial)",
+  "core_loop_v2": {
+    "description": "Intent classification + escalation decision + priority assignment + confidence scoring",
+    "total_tickets": 65,
+    "full_eval_avg_ms": 3.19,
+    "per_ticket_avg_ms": 0.038,
+    "iterations": "100 full evals, 1000 per-ticket runs"
+  },
+  "memory_state_v1": {
+    "description": "Conversation tracking, sentiment scoring, topic extraction, channel switch detection",
+    "total_events": 65,
+    "full_process_avg_ms": 2.299,
+    "per_event_avg_ms": 0.035,
+    "iterations": "100 full runs"
+  },
+  "mcp_tools": {
+    "description": "MCP-style tool server (local mock, file-backed)",
+    "search_knowledge_base_avg_ms": 0.307,
+    "create_ticket_avg_ms": 1.567,
+    "get_customer_history_avg_ms": 0.264
+  },
+  "summary": {
+    "per_ticket_processing_ms": 0.038,
+    "meets_3s_processing_target": true,
+    "accuracy_baseline": {
+      "escalation_accuracy": 100.0,
+      "priority_accuracy": 96.92,
+      "category_accuracy": 98.46,
+      "full_match_accuracy": 96.92
+    },
+    "notes": [
+      "Stage 1 prototype uses heuristic keyword matching - no LLM API calls involved",
+      "Processing time is sub-millisecond because no network/LLM latency exists",
+      "Stage 2 will add LLM inference (~500-2000ms per call) and database queries (~5-50ms)",
+      "Delivery latency (email/WhatsApp/web API) depends on external service and is not measured here",
+      "The 3s processing target and 30s delivery target from the spec will be validated in Stage 2"
+    ]
+  }
+}

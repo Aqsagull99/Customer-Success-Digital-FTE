@@ -1,0 +1,53 @@
+{
+  "config": {
+    "host": "http://localhost:8000",
+    "users": 20,
+    "duration": 60
+  },
+  "summary": {
+    "total_requests": 698,
+    "rps": 11.141257649599794,
+    "success_rate": 100.0,
+    "avg_latency_ms": 82.28216164433171,
+    "p95_latency_ms": 100.12907981872559,
+    "p99_latency_ms": 2189.357626438136
+  },
+  "endpoints": {
+    "/health": {
+      "total": 117,
+      "errors": 0,
+      "avg_ms": 80.92923449654864,
+      "p95_ms": 76.93157196044919
+    },
+    "/webhooks/whatsapp": {
+      "total": 128,
+      "errors": 0,
+      "avg_ms": 85.66188998520374,
+      "p95_ms": 71.08843326568592
+    },
+    "/webhooks/gmail": {
+      "total": 53,
+      "errors": 0,
+      "avg_ms": 53.45925744974388,
+      "p95_ms": 69.04883384704588
+    },
+    "/support/submit": {
+      "total": 283,
+      "errors": 0,
+      "avg_ms": 89.02288662671201,
+      "p95_ms": 123.33569526672349
+    },
+    "/customers/lookup": {
+      "total": 59,
+      "errors": 0,
+      "avg_ms": 124.6432732727568,
+      "p95_ms": 77.26597785949696
+    },
+    "/metrics/channels": {
+      "total": 58,
+      "errors": 0,
+      "avg_ms": 27.909237762977337,
+      "p95_ms": 76.99297666549681
+    }
+  }
+}

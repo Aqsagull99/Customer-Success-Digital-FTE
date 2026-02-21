@@ -1,0 +1,386 @@
+{
+  "dataset_size": 65,
+  "hard_ticket_count": 10,
+  "naive_metrics": {
+    "total_tickets": 65,
+    "escalation_accuracy": 100.0,
+    "priority_accuracy": 92.31,
+    "category_accuracy": 98.46,
+    "overall_full_match_accuracy": 92.31
+  },
+  "enhanced_metrics": {
+    "total_tickets": 65,
+    "escalation_accuracy": 100.0,
+    "priority_accuracy": 96.92,
+    "category_accuracy": 98.46,
+    "overall_full_match_accuracy": 96.92
+  },
+  "hard_ticket_failure_analysis": [
+    {
+      "ticket_id": "T-5002",
+      "message_excerpt": "this thing is acting up again. vibes are bad rn",
+      "naive_prediction": {
+        "category": "General Inquiry",
+        "escalation": "No",
+        "priority": "P3",
+        "reasons": []
+      },
+      "expected": {
+        "category": "Technical Issue",
+        "escalation": "No",
+        "priority": "P2",
+        "reasons": []
+      },
+      "enhanced_prediction": {
+        "category": "General Inquiry",
+        "escalation": "No",
+        "priority": "P3",
+        "confidence": 0.72,
+        "reasons": []
+      },
+      "failure_modes": [
+        "Ambiguous slang/indirect phrasing lowered intent clarity"
+      ]
+    },
+    {
+      "ticket_id": "T-5003",
+      "message_excerpt": "Everything is mostly okay. We are quietly piloting a competitor next week in case support stays this slow.",
+      "naive_prediction": {
+        "category": "General Inquiry",
+        "escalation": "Yes",
+        "priority": "P3",
+        "reasons": []
+      },
+      "expected": {
+        "category": "General Inquiry",
+        "escalation": "Yes",
+        "priority": "P1",
+        "reasons": [
+          "Churn/competitor risk"
+        ]
+      },
+      "enhanced_prediction": {
+        "category": "General Inquiry",
+        "escalation": "Yes",
+        "priority": "P1",
+        "confidence": 0.64,
+        "reasons": [
+          "Churn/competitor risk"
+        ]
+      },
+      "failure_modes": [
+        "Hidden churn/competitor cue not captured by baseline keywords",
+        "Ambiguous slang/indirect phrasing lowered intent clarity"
+      ]
+    },
+    {
+      "ticket_id": "T-5005",
+      "message_excerpt": "all good mostly, except you charged us extra lol can u sort it",
+      "naive_prediction": {
+        "category": "Billing",
+        "escalation": "Yes",
+        "priority": "P3",
+        "reasons": []
+      },
+      "expected": {
+        "category": "Billing",
+        "escalation": "Yes",
+        "priority": "P1",
+        "reasons": [
+          "Payment dispute/refund"
+        ]
+      },
+      "enhanced_prediction": {
+        "category": "Billing",
+        "escalation": "Yes",
+        "priority": "P3",
+        "confidence": 0.72,
+        "reasons": []
+      },
+      "failure_modes": [
+        "Ambiguous slang/indirect phrasing lowered intent clarity"
+      ]
+    },
+    {
+      "ticket_id": "T-5007",
+      "message_excerpt": "Your team has been kind. Still, if uptime drops one more time we will terminate and migrate this quarter.",
+      "naive_prediction": {
+        "category": "General Inquiry",
+        "escalation": "Yes",
+        "priority": "P3",
+        "reasons": []
+      },
+      "expected": {
+        "category": "General Inquiry",
+        "escalation": "Yes",
+        "priority": "P1",
+        "reasons": [
+          "Churn/competitor risk"
+        ]
+      },
+      "enhanced_prediction": {
+        "category": "General Inquiry",
+        "escalation": "Yes",
+        "priority": "P1",
+        "confidence": 0.66,
+        "reasons": [
+          "Churn/competitor risk"
+        ]
+      },
+      "failure_modes": [
+        "Hidden churn/competitor cue not captured by baseline keywords",
+        "Conflicting sentiment: positive opener masks escalation risk"
+      ]
+    },
+    {
+      "ticket_id": "T-5009",
+      "message_excerpt": "Could you kindly explain this extra line item? If unresolved, procurement will move spend to another vendor.",
+      "naive_prediction": {
+        "category": "Billing",
+        "escalation": "Yes",
+        "priority": "P3",
+        "reasons": []
+      },
+      "expected": {
+        "category": "Billing",
+        "escalation": "Yes",
+        "priority": "P1",
+        "reasons": [
+          "Payment dispute/refund",
+          "Churn/competitor risk"
+        ]
+      },
+      "enhanced_prediction": {
+        "category": "Billing",
+        "escalation": "Yes",
+        "priority": "P1",
+        "confidence": 0.84,
+        "reasons": [
+          "Churn/competitor risk"
+        ]
+      },
+      "failure_modes": [
+        "Hidden churn/competitor cue not captured by baseline keywords"
+      ]
+    }
+  ],
+  "hard_ticket_diagnostics": [
+    {
+      "ticket_id": "T-5001",
+      "baseline_match": true,
+      "observed_gaps": [
+        "conflicting sentiment in same message"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P1",
+      "enhanced_priority": "P1",
+      "confidence": 0.69
+    },
+    {
+      "ticket_id": "T-5002",
+      "baseline_match": false,
+      "observed_gaps": [
+        "ambiguous/slang phrasing reduces deterministic parsing"
+      ],
+      "expected_escalation": "No",
+      "expected_priority": "P2",
+      "naive_priority": "P3",
+      "enhanced_priority": "P3",
+      "confidence": 0.72
+    },
+    {
+      "ticket_id": "T-5003",
+      "baseline_match": false,
+      "observed_gaps": [
+        "competitor/churn cue missed by baseline",
+        "ambiguous/slang phrasing reduces deterministic parsing"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P3",
+      "enhanced_priority": "P1",
+      "confidence": 0.64
+    },
+    {
+      "ticket_id": "T-5004",
+      "baseline_match": true,
+      "observed_gaps": [],
+      "expected_escalation": "Yes",
+      "expected_priority": "P3",
+      "naive_priority": "P3",
+      "enhanced_priority": "P3",
+      "confidence": 0.92
+    },
+    {
+      "ticket_id": "T-5005",
+      "baseline_match": false,
+      "observed_gaps": [
+        "ambiguous/slang phrasing reduces deterministic parsing"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P3",
+      "enhanced_priority": "P3",
+      "confidence": 0.72
+    },
+    {
+      "ticket_id": "T-5006",
+      "baseline_match": true,
+      "observed_gaps": [
+        "ambiguous/slang phrasing reduces deterministic parsing"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P1",
+      "enhanced_priority": "P1",
+      "confidence": 0.67
+    },
+    {
+      "ticket_id": "T-5007",
+      "baseline_match": false,
+      "observed_gaps": [
+        "competitor/churn cue missed by baseline",
+        "conflicting sentiment in same message"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P3",
+      "enhanced_priority": "P1",
+      "confidence": 0.66
+    },
+    {
+      "ticket_id": "T-5008",
+      "baseline_match": true,
+      "observed_gaps": [
+        "ambiguous/slang phrasing reduces deterministic parsing"
+      ],
+      "expected_escalation": "No",
+      "expected_priority": "P2",
+      "naive_priority": "P2",
+      "enhanced_priority": "P2",
+      "confidence": 0.72
+    },
+    {
+      "ticket_id": "T-5009",
+      "baseline_match": false,
+      "observed_gaps": [
+        "competitor/churn cue missed by baseline"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P3",
+      "enhanced_priority": "P1",
+      "confidence": 0.84
+    },
+    {
+      "ticket_id": "T-5010",
+      "baseline_match": true,
+      "observed_gaps": [
+        "competitor/churn cue missed by baseline"
+      ],
+      "expected_escalation": "Yes",
+      "expected_priority": "P1",
+      "naive_priority": "P1",
+      "enhanced_priority": "P1",
+      "confidence": 0.79
+    }
+  ],
+  "hard_ticket_confidence_outputs": [
+    {
+      "ticket_id": "T-5001",
+      "channel": "email",
+      "confidence": 0.69,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P1",
+      "predicted_reasons": [
+        "Legal/compliance request"
+      ]
+    },
+    {
+      "ticket_id": "T-5002",
+      "channel": "whatsapp",
+      "confidence": 0.72,
+      "predicted_escalation": "No",
+      "predicted_priority": "P3",
+      "predicted_reasons": []
+    },
+    {
+      "ticket_id": "T-5003",
+      "channel": "web_form",
+      "confidence": 0.64,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P1",
+      "predicted_reasons": [
+        "Churn/competitor risk"
+      ]
+    },
+    {
+      "ticket_id": "T-5004",
+      "channel": "email",
+      "confidence": 0.92,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P3",
+      "predicted_reasons": []
+    },
+    {
+      "ticket_id": "T-5005",
+      "channel": "whatsapp",
+      "confidence": 0.72,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P3",
+      "predicted_reasons": []
+    },
+    {
+      "ticket_id": "T-5006",
+      "channel": "web_form",
+      "confidence": 0.67,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P1",
+      "predicted_reasons": [
+        "Hostile/repeated frustration",
+        "Legal/compliance request"
+      ]
+    },
+    {
+      "ticket_id": "T-5007",
+      "channel": "email",
+      "confidence": 0.66,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P1",
+      "predicted_reasons": [
+        "Churn/competitor risk"
+      ]
+    },
+    {
+      "ticket_id": "T-5008",
+      "channel": "whatsapp",
+      "confidence": 0.72,
+      "predicted_escalation": "No",
+      "predicted_priority": "P2",
+      "predicted_reasons": []
+    },
+    {
+      "ticket_id": "T-5009",
+      "channel": "web_form",
+      "confidence": 0.84,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P1",
+      "predicted_reasons": [
+        "Churn/competitor risk"
+      ]
+    },
+    {
+      "ticket_id": "T-5010",
+      "channel": "email",
+      "confidence": 0.79,
+      "predicted_escalation": "Yes",
+      "predicted_priority": "P1",
+      "predicted_reasons": [
+        "Churn/competitor risk",
+        "Legal/compliance request",
+        "Security incident"
+      ]
+    }
+  ]
+}

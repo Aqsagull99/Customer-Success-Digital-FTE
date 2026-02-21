@@ -1,0 +1,66 @@
+groups:
+  - name: fte_alerts
+    rules:
+      # API latency too high
+      - alert: HighResponseLatency
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="fte-api"}[5m])) > 3
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High API response latency (>3s at p95)"
+          description: "FTE API p95 latency is {{ $value }}s"
+
+      # Agent processing too slow
+      - alert: SlowAgentProcessing
+        expr: fte_agent_processing_seconds > 30
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Agent processing exceeds 30s delivery target"
+
+      # High escalation rate
+      - alert: HighEscalationRate
+        expr: rate(fte_escalations_total[15m]) / rate(fte_messages_processed_total[15m]) > 0.30
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Escalation rate above 30% for 10 minutes"
+
+      # Kafka consumer lag
+      - alert: KafkaConsumerLag
+        expr: fte_kafka_consumer_lag > 100
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Kafka consumer lag > 100 messages"
+
+      # Channel down
+      - alert: ChannelUnavailable
+        expr: fte_channel_health == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Channel {{ $labels.channel }} is unavailable"
+
+      # Database connection failures
+      - alert: DatabaseConnectionFailure
+        expr: fte_db_connection_errors_total > 5
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Multiple database connection failures"
+
+      # API error rate
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 3m
+        labels:
+          severity: critical
+        annotations:
+          summary: "API error rate above 5%"

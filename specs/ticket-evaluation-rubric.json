@@ -1,0 +1,668 @@
+[
+  {
+    "ticket_id": "T-2001",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2002",
+    "channel": "email",
+    "category": "Billing",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2003",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-2004",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2005",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2006",
+    "channel": "email",
+    "category": "Billing",
+    "ideal_ai_response": "Hello, Thanks for flagging this billing issue. I have escalated it to our billing specialist and marked it high priority. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund"
+    ]
+  },
+  {
+    "ticket_id": "T-2007",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-2008",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, I can help troubleshoot this. Please share exact error text, timestamp, and last successful action. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2009",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thank you for the details. I have escalated this to our legal/compliance team for an authoritative response. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Legal/compliance request"
+    ]
+  },
+  {
+    "ticket_id": "T-2010",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Customer requested human/manager",
+      "Critical workflow blocked",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-2011",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2012",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2013",
+    "channel": "email",
+    "category": "Billing",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Out-of-scope pricing negotiation"
+    ]
+  },
+  {
+    "ticket_id": "T-2014",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2015",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Critical workflow blocked"
+    ]
+  },
+  {
+    "ticket_id": "T-2016",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2017",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-2018",
+    "channel": "email",
+    "category": "Billing",
+    "ideal_ai_response": "Hello, Thanks for flagging this billing issue. I have escalated it to our billing specialist and marked it high priority. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-2019",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for reporting this. I have escalated to security support immediately for urgent investigation. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Security incident"
+    ]
+  },
+  {
+    "ticket_id": "T-2020",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for reaching out. Here are the relevant product steps and next actions. Best regards, Customer Success Team",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3001",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3002",
+    "channel": "whatsapp",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for flagging this billing issue. I have escalated it to our billing specialist and marked it high priority.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3003",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3004",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3005",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3006",
+    "channel": "whatsapp",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Out-of-scope pricing negotiation"
+    ]
+  },
+  {
+    "ticket_id": "T-3007",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3008",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3009",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Customer requested human/manager"
+    ]
+  },
+  {
+    "ticket_id": "T-3010",
+    "channel": "whatsapp",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3011",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3012",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3013",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "I can help troubleshoot this. Please share exact error text, timestamp, and last successful action.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3014",
+    "channel": "whatsapp",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for flagging this billing issue. I have escalated it to our billing specialist and marked it high priority.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3015",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3016",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3017",
+    "channel": "whatsapp",
+    "category": "Billing",
+    "ideal_ai_response": "I can help check this billing item. Please share invoice and transaction references for verification.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3018",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for reporting this. I have escalated to security support immediately for urgent investigation.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Security incident",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-3019",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-3020",
+    "channel": "whatsapp",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4001",
+    "channel": "web_form",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4002",
+    "channel": "web_form",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for flagging this billing issue. I have escalated it to our billing specialist and marked it high priority.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-4003",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4004",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4005",
+    "channel": "web_form",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Critical workflow blocked"
+    ]
+  },
+  {
+    "ticket_id": "T-4006",
+    "channel": "web_form",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-4007",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4008",
+    "channel": "web_form",
+    "category": "Billing",
+    "ideal_ai_response": "Thank you for the details. I have escalated this to our legal/compliance team for an authoritative response.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Legal/compliance request"
+    ]
+  },
+  {
+    "ticket_id": "T-4009",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thank you for the details. I have escalated this to our legal/compliance team for an authoritative response.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Legal/compliance request"
+    ]
+  },
+  {
+    "ticket_id": "T-4010",
+    "channel": "web_form",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P2",
+    "escalation_reasons": [
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-4011",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4012",
+    "channel": "web_form",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": [
+      "Customer requested human/manager"
+    ]
+  },
+  {
+    "ticket_id": "T-4013",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for reaching out. Here are the relevant product steps and next actions.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-4014",
+    "channel": "web_form",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Critical workflow blocked"
+    ]
+  },
+  {
+    "ticket_id": "T-4015",
+    "channel": "web_form",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Thanks for reporting this. I have escalated to security support immediately for urgent investigation.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Security incident"
+    ]
+  },
+  {
+    "ticket_id": "T-5001",
+    "channel": "email",
+    "category": "Billing",
+    "ideal_ai_response": "Hello, Thank you for the details. I have escalated this to our legal/compliance team for an authoritative response. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Legal/compliance request"
+    ]
+  },
+  {
+    "ticket_id": "T-5002",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "I can help troubleshoot this. Please share exact error text, timestamp, and last successful action.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-5003",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thanks for the candid feedback. I have escalated this to our human retention/support lead for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Churn/competitor risk"
+    ]
+  },
+  {
+    "ticket_id": "T-5004",
+    "channel": "email",
+    "category": "Billing",
+    "ideal_ai_response": "Hello, Thanks for sharing this. I have escalated your case to a human specialist for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P3",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-5005",
+    "channel": "whatsapp",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for flagging this billing issue. I have escalated it to our billing specialist and marked it high priority.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund"
+    ]
+  },
+  {
+    "ticket_id": "T-5006",
+    "channel": "web_form",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Thank you for the details. I have escalated this to our legal/compliance team for an authoritative response.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Legal/compliance request",
+      "Hostile/repeated frustration"
+    ]
+  },
+  {
+    "ticket_id": "T-5007",
+    "channel": "email",
+    "category": "General Inquiry",
+    "ideal_ai_response": "Hello, Thanks for the candid feedback. I have escalated this to our human retention/support lead for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Churn/competitor risk"
+    ]
+  },
+  {
+    "ticket_id": "T-5008",
+    "channel": "whatsapp",
+    "category": "Technical Issue",
+    "ideal_ai_response": "I can help troubleshoot this. Please share exact error text, timestamp, and last successful action.",
+    "correct_escalation_decision": "No",
+    "priority_level": "P2",
+    "escalation_reasons": []
+  },
+  {
+    "ticket_id": "T-5009",
+    "channel": "web_form",
+    "category": "Billing",
+    "ideal_ai_response": "Thanks for the candid feedback. I have escalated this to our human retention/support lead for immediate follow-up.",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Payment dispute/refund",
+      "Churn/competitor risk"
+    ]
+  },
+  {
+    "ticket_id": "T-5010",
+    "channel": "email",
+    "category": "Technical Issue",
+    "ideal_ai_response": "Hello, Thanks for the candid feedback. I have escalated this to our human retention/support lead for immediate follow-up. Best regards, Customer Success Team",
+    "correct_escalation_decision": "Yes",
+    "priority_level": "P1",
+    "escalation_reasons": [
+      "Security incident",
+      "Legal/compliance request",
+      "Churn/competitor risk"
+    ]
+  }
+]
