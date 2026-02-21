@@ -31,3 +31,11 @@ pnpm-debug.log*
 .DS_Store
 .idea/
 .vscode/
+
+# Agent/editor artifacts
+.claude/
+*:Zone.Identifier
+
+# Python cache
+__pycache__/
+*.py[cod]
