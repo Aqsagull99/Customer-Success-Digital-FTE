@@ -33,7 +33,7 @@ pnpm-debug.log*
 .vscode/
 
 # Agent/editor artifacts
-.claude/
+.claude/settings.local.json
 *:Zone.Identifier
 
 # Python cache
