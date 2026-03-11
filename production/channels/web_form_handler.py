@@ -5,9 +5,10 @@ from __future__ import annotations
 import uuid
 from datetime import datetime, timezone
 from typing import Optional
+from urllib.parse import urlparse
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel, EmailStr, field_validator
+from pydantic import BaseModel, EmailStr, Field, ValidationInfo, field_validator
 
 router = APIRouter(prefix="/support", tags=["support-form"])
 
@@ -16,12 +17,35 @@ class SupportFormSubmission(BaseModel):
     """Support form submission model with validation."""
 
     name: str
-    email: EmailStr
-    subject: str
+    email: Optional[EmailStr] = None
+    phone: Optional[str] = None
+    subject: Optional[str] = None
     category: str  # 'general', 'technical', 'billing', 'feedback', 'bug_report'
     message: str
     priority: Optional[str] = "medium"
-    attachments: Optional[list[str]] = []
+    channel: str = "web"
+    attachment: Optional[str] = None
+    attachments: list[str] = Field(default_factory=list)
+
+    @staticmethod
+    def _is_allowed_attachment(url: str) -> bool:
+        allowed_domains = {
+            "drive.google.com",
+            "docs.google.com",
+            "dropbox.com",
+            "onedrive.live.com",
+            "1drv.ms",
+            "box.com",
+        }
+        parsed = urlparse(url)
+        if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+            return False
+        hostname = parsed.netloc.lower().split(":")[0]
+        if hostname.startswith("www."):
+            hostname = hostname[4:]
+        return hostname in allowed_domains or any(
+            hostname.endswith(f".{domain}") for domain in allowed_domains
+        )
 
     @field_validator("name")
     @classmethod
@@ -29,6 +53,46 @@ class SupportFormSubmission(BaseModel):
         if not v or len(v.strip()) < 2:
             raise ValueError("Name must be at least 2 characters")
         return v.strip()
+
+    @field_validator("channel")
+    @classmethod
+    def channel_must_be_valid(cls, v: str) -> str:
+        valid_channels = ["web", "email", "whatsapp"]
+        if v not in valid_channels:
+            raise ValueError(f"Channel must be one of: {valid_channels}")
+        return v
+
+    @field_validator("email")
+    @classmethod
+    def email_must_be_present_for_email_channels(
+        cls, v: Optional[EmailStr], info: ValidationInfo
+    ) -> Optional[EmailStr]:
+        channel = (info.data or {}).get("channel", "web")
+        # Only require email for web and email channels, not whatsapp
+        if channel in {"web", "email"} and not v:
+            raise ValueError("Email is required for web or email support")
+        return v
+
+    @field_validator("subject")
+    @classmethod
+    def subject_must_be_present_for_email_channels(
+        cls, v: Optional[str], info: ValidationInfo
+    ) -> Optional[str]:
+        channel = (info.data or {}).get("channel", "web")
+        # Only require subject for web and email channels, not whatsapp
+        if channel in {"web", "email"} and (not v or len(v.strip()) < 5):
+            raise ValueError("Subject must be at least 5 characters")
+        return v.strip() if v else v
+
+    @field_validator("phone")
+    @classmethod
+    def phone_required_for_whatsapp(
+        cls, v: Optional[str], info: ValidationInfo
+    ) -> Optional[str]:
+        channel = (info.data or {}).get("channel", "web")
+        if channel == "whatsapp" and (not v or len(v.strip()) < 7):
+            raise ValueError("WhatsApp number must be at least 7 characters")
+        return v.strip() if v else v
 
     @field_validator("message")
     @classmethod
@@ -43,6 +107,23 @@ class SupportFormSubmission(BaseModel):
         valid_categories = ["general", "technical", "billing", "feedback", "bug_report"]
         if v not in valid_categories:
             raise ValueError(f"Category must be one of: {valid_categories}")
+        return v
+
+    @field_validator("attachment")
+    @classmethod
+    def attachment_must_be_allowlisted(cls, v: Optional[str]) -> Optional[str]:
+        if not v:
+            return v
+        if not cls._is_allowed_attachment(v):
+            raise ValueError("Attachment link must be from an approved provider")
+        return v
+
+    @field_validator("attachments")
+    @classmethod
+    def attachments_must_be_allowlisted(cls, v: list[str]) -> list[str]:
+        for link in v:
+            if not cls._is_allowed_attachment(link):
+                raise ValueError("Attachment links must be from approved providers")
         return v
 
 
@@ -65,13 +146,28 @@ async def submit_support_form(submission: SupportFormSubmission):
     3. Publishes to Kafka for agent processing
     4. Returns confirmation to user
     """
+    # Debug logging
+    import logging
+    logging.basicConfig(level=logging.DEBUG)
+    logger = logging.getLogger(__name__)
+    logger.debug(f"Received submission: channel={submission.channel}, email={submission.email}, phone={submission.phone}")
+    
     ticket_id = str(uuid.uuid4())
 
+    # Map channel to internal channel name
+    channel_map = {
+        "web": "web_form",
+        "email": "email",
+        "whatsapp": "whatsapp",
+    }
+    internal_channel = channel_map.get(submission.channel, "web_form")
+
     message_data = {
-        "channel": "web_form",
+        "channel": internal_channel,
         "channel_message_id": ticket_id,
         "customer_email": submission.email,
         "customer_name": submission.name,
+        "customer_phone": submission.phone,
         "subject": submission.subject,
         "content": submission.message,
         "category": submission.category,
@@ -79,7 +175,11 @@ async def submit_support_form(submission: SupportFormSubmission):
         "received_at": datetime.now(timezone.utc).isoformat(),
         "metadata": {
             "form_version": "1.0",
-            "attachments": submission.attachments or [],
+            "attachments": [
+                *([submission.attachment] if submission.attachment else []),
+                *submission.attachments,
+            ],
+            "channel_selected": submission.channel,
         },
     }
 

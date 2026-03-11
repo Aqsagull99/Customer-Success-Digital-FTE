@@ -11,6 +11,7 @@ from fastapi.responses import Response
 from channels.gmail_handler import GmailHandler
 from channels.whatsapp_handler import WhatsAppHandler
 from channels.web_form_handler import router as web_form_router
+from api.chat_endpoint import router as chat_router
 from database.queries import close_db_pool, get_channel_metrics
 from kafka_client import TOPICS, get_kafka_producer
 
@@ -31,6 +32,9 @@ app.add_middleware(
 
 # Include web form router
 app.include_router(web_form_router)
+
+# Include chat router
+app.include_router(chat_router)
 
 # Initialize handlers
 gmail_handler = GmailHandler()

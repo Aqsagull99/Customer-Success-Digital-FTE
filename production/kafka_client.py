@@ -4,12 +4,15 @@ from __future__ import annotations
 
 import json
 import os
+import logging
 from datetime import datetime, timezone
 from typing import Callable, Optional
 
 from aiokafka import AIOKafkaConsumer, AIOKafkaProducer
 
 KAFKA_BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka:9092")
+KAFKA_REQUIRED = os.getenv("KAFKA_REQUIRED", "false").lower() == "true"
+logger = logging.getLogger(__name__)
 
 # Topic definitions for multi-channel FTE
 TOPICS = {
@@ -36,19 +39,34 @@ _producer: Optional[FTEKafkaProducer] = None
 class FTEKafkaProducer:
     def __init__(self):
         self.producer: Optional[AIOKafkaProducer] = None
+        self.disabled = False
 
     async def start(self):
-        self.producer = AIOKafkaProducer(
-            bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
-            value_serializer=lambda v: json.dumps(v).encode("utf-8"),
-        )
-        await self.producer.start()
+        try:
+            self.producer = AIOKafkaProducer(
+                bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+                value_serializer=lambda v: json.dumps(v).encode("utf-8"),
+            )
+            await self.producer.start()
+            self.disabled = False
+        except Exception:
+            self.producer = None
+            self.disabled = True
+            logger.exception(
+                "Kafka unavailable at %s. Running with Kafka disabled for local testing.",
+                KAFKA_BOOTSTRAP_SERVERS,
+            )
+            if KAFKA_REQUIRED:
+                raise
 
     async def stop(self):
         if self.producer:
             await self.producer.stop()
 
     async def publish(self, topic: str, event: dict):
+        if self.disabled or not self.producer:
+            logger.warning("Skipping Kafka publish to %s because Kafka is disabled.", topic)
+            return
         event["timestamp"] = datetime.now(timezone.utc).isoformat()
         await self.producer.send_and_wait(topic, event)
 

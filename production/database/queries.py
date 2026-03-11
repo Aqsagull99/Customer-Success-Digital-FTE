@@ -241,3 +241,22 @@ async def get_channel_metrics() -> list:
                GROUP BY initial_channel""",
         )
         return [dict(r) for r in rows]
+
+
+# -- Chat/Conversation Helpers --
+
+async def get_conversation_messages(conversation_id: str) -> list:
+    """Get all messages for a conversation."""
+    pool = await get_db_pool()
+    async with pool.acquire() as conn:
+        rows = await conn.fetch(
+            """SELECT role, content, created_at
+               FROM messages
+               WHERE conversation_id = (
+                   SELECT id FROM conversations
+                   WHERE external_id = $1 OR id::text = $1
+               )
+               ORDER BY created_at ASC""",
+            conversation_id,
+        )
+        return [dict(r) for r in rows]

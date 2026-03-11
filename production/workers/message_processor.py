@@ -50,6 +50,9 @@ class UnifiedMessageProcessor:
         try:
             start_time = datetime.now(timezone.utc)
 
+            # Debug logging
+            logger.info(f"Processing message: channel={message.get('channel')}, phone={message.get('customer_phone')}, email={message.get('customer_email')}")
+
             channel = Channel(message["channel"])
             customer_id = await self.resolve_customer(message)
             conversation_id = await self.get_or_create_conversation(
@@ -68,18 +71,18 @@ class UnifiedMessageProcessor:
                 channel_message_id=message.get("channel_message_id"),
             )
 
-            # Load conversation history
+            # Load conversation history and format for Groq/OpenAI
             history_rows = await load_conversation_messages(conversation_id)
             history = [
-                {"role": r["role"], "content": r["content"]} for r in reversed(history_rows)
+                {"role": "user" if r["role"] == "customer" else "assistant", "content": r["content"]}
+                for r in reversed(history_rows)
             ]
 
             # Run agent
-            from agents import Runner
+            from agent.customer_success_agent import customer_success_agent
 
-            result = await Runner.run(
-                customer_success_agent,
-                input=history,
+            result = await customer_success_agent.run(
+                input_messages=history,
                 context={
                     "customer_id": customer_id,
                     "conversation_id": conversation_id,
@@ -102,6 +105,28 @@ class UnifiedMessageProcessor:
                 content=result.final_output,
                 latency_ms=latency_ms,
             )
+
+            # Send response via channel (WhatsApp/Gmail)
+            if channel == Channel.WHATSAPP and message.get("customer_phone"):
+                try:
+                    await self.whatsapp.send_message(
+                        to_phone=message["customer_phone"],
+                        body=result.final_output,
+                    )
+                    logger.info(f"Sent WhatsApp message to {message['customer_phone']}")
+                except Exception as e:
+                    logger.error(f"Failed to send WhatsApp message: {e}")
+
+            elif channel == Channel.EMAIL and message.get("customer_email"):
+                try:
+                    await self.gmail.send_reply(
+                        to_email=message["customer_email"],
+                        subject=message.get("subject", "Support Request"),
+                        body=result.final_output,
+                    )
+                    logger.info(f"Sent email to {message['customer_email']}")
+                except Exception as e:
+                    logger.error(f"Failed to send email: {e}")
 
             # Publish metrics
             producer = await get_kafka_producer()

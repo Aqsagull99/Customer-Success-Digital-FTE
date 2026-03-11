@@ -14,11 +14,31 @@ from googleapiclient.discovery import build
 
 class GmailHandler:
     def __init__(self, credentials_path: Optional[str] = None):
-        if credentials_path:
-            self.credentials = Credentials.from_authorized_user_file(credentials_path)
-            self.service = build("gmail", "v1", credentials=self.credentials)
+        import os
+        import pickle
+        
+        self.service = None
+        
+        # Try to load existing token
+        token_file = credentials_path or 'credentials/token.pkl'
+        
+        if os.path.exists(token_file):
+            try:
+                # Try pickle format first
+                with open(token_file, 'rb') as f:
+                    self.credentials = pickle.load(f)
+                
+                # Refresh if expired
+                if self.credentials.expired and self.credentials.refresh_token:
+                    from google.auth.transport.requests import Request
+                    self.credentials.refresh(Request())
+                
+                self.service = build("gmail", "v1", credentials=self.credentials)
+                print(f"✅ Gmail authenticated: {self.credentials.id_token.get('email', 'Unknown') if hasattr(self.credentials, 'id_token') else 'OK'}")
+            except Exception as e:
+                print(f"⚠️ Failed to load Gmail credentials: {e}")
         else:
-            self.service = None
+            print("⚠️ Gmail token not found. Run authentication first.")
 
     async def setup_push_notifications(self, topic_name: str) -> dict:
         """Set up Gmail push notifications via Pub/Sub."""

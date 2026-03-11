@@ -21,3 +21,42 @@ A collection of hands-on skills for students to explore and practice when learni
 | **skill-validator** | Validate any skill against production-level quality criteria. 7 weighted criteria, 0-100 scoring, actionable feedback with prioritized recommendations |
 | **theme-factory** | Toolkit for styling artifacts (slides, docs, reports, HTML) with 10 pre-set professional themes or custom on-the-fly theme generation |
 | **xlsx** | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization |
+
+
+
+According to docs:
+
+      1 ┌─────────────────────────────────────────────────────────┐
+      2 │           MULTI-CHANNEL INTAKE ARCHITECTURE             │
+      3 │                                                          │
+      4 │   ┌──────────────┐    ┌──────────────┐    ┌──────────┐ │
+      5 │   │    Gmail     │    │   WhatsApp   │    │Web Form  │ │
+      6 │   │   (Email)    │    │  (Messaging) │    │(Website) │ │
+      7 │   └──────┬───────┘    └──────┬───────┘    └─────┬────┘ │
+      8 │          │                   │                   │      │
+      9 │          ▼                   ▼                   ▼      │
+     10 │   ┌──────────────┐    ┌──────────────┐    ┌──────────┐ │
+     11 │   │ Gmail API /  │    │   Twilio     │    │ FastAPI  │ │
+     12 │   │   Webhook    │    │   Webhook    │    │ Endpoint │ │
+     13 │   └──────┬───────┘    └──────┬───────┘    └─────┬────┘ │
+     14 │          │                   │                   │      │
+     15 │          └───────────────────┼───────────────────┘      │
+     16 │                              ▼                           │
+     17 │                    ┌─────────────────┐                  │
+     18 │                    │  Unified Ticket │                  │
+     19 │                    │    Ingestion    │                  │
+     20 │                    │     (Kafka)     │                  │
+     21 │                    └────────┬────────┘                  │
+     22 │                             │                            │
+     23 │                             ▼                            │
+     24 │                    ┌─────────────────┐                  │
+     25 │                    │   Customer      │                  │
+     26 │                    │   Success FTE   │                  │
+     27 │                    │    (Agent)      │                  │
+     28 │                    └────────┬────────┘                  │
+     29 │                             │                            │
+     30 │              ┌──────────────┼──────────────┐            │
+     31 │              ▼              ▼              ▼             │
+     32 │         Reply via      Reply via     Reply via          │
+     33 │          Email         WhatsApp       Web/API           │
+     34 └─────────────────────────────────────────────────────────┘

@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { getWhatsAppConfig } from '../utils/whatsapp';
+import { IconGlobe, IconMail, IconPhone } from './Icons';
+import WhatsAppWidget from './WhatsAppWidget';
 
 const CATEGORIES = [
   { value: 'general', label: 'General Question' },
@@ -15,13 +18,17 @@ const PRIORITIES = [
 ];
 
 export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
+  const whatsapp = getWhatsAppConfig();
+  const [channel, setChannel] = useState('web');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     category: 'general',
     priority: 'medium',
     message: '',
+    attachment: '',
   });
 
   const [status, setStatus] = useState('idle');
@@ -38,13 +45,20 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
       setError('Please enter your name (at least 2 characters)');
       return false;
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      setError('Please enter a valid email address');
-      return false;
-    }
-    if (formData.subject.trim().length < 5) {
-      setError('Please enter a subject (at least 5 characters)');
-      return false;
+    if (channel === 'email' || channel === 'web') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        setError('Please enter a valid email address');
+        return false;
+      }
+      if (formData.subject.trim().length < 5) {
+        setError('Please enter a subject (at least 5 characters)');
+        return false;
+      }
+    } else {
+      if (formData.phone.trim().length < 7) {
+        setError('Please enter a valid WhatsApp number');
+        return false;
+      }
     }
     if (formData.message.trim().length < 10) {
       setError('Please describe your issue in more detail (at least 10 characters)');
@@ -61,19 +75,70 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
 
     setStatus('submitting');
 
+    // Auto-generate subject for WhatsApp if not provided
+    const submitData = {
+      ...formData,
+      channel,
+      subject: formData.subject || `WhatsApp Support: ${formData.name}`,
+    };
+
+    // For WhatsApp, format phone number with country code and remove email
+    if (channel === 'whatsapp') {
+      delete submitData.email;
+      // Ensure phone number starts with + for international format
+      let phone = submitData.phone.trim();
+      if (!phone.startsWith('+')) {
+        // Auto-add Pakistan country code if not present
+        phone = phone.startsWith('92') ? '+' + phone : '+92' + phone.replace(/^0/, '');
+      }
+      submitData.phone = phone;
+    }
+
+    // Debug: Log what we're sending
+    console.log('=== WHATSAPP SUBMIT DEBUG ===');
+    console.log('Selected channel:', channel);
+    console.log('Submitting data:', submitData);
+    console.log('=============================');
+
     try {
       const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitData),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Submission failed');
+      const rawBody = await response.text();
+      const contentType = response.headers.get('content-type') || '';
+      const isJsonResponse = contentType.includes('application/json');
+      let responseData = null;
+
+      if (isJsonResponse && rawBody) {
+        try {
+          responseData = JSON.parse(rawBody);
+        } catch {
+          responseData = null;
+        }
       }
 
-      const data = await response.json();
+      if (!response.ok) {
+        let detail =
+          responseData?.detail ||
+          responseData?.message ||
+          (rawBody ? rawBody.slice(0, 160) : null);
+        
+        // Handle array of errors from Pydantic
+        if (Array.isArray(detail)) {
+          detail = detail.map(err => err.msg || JSON.stringify(err)).join('; ');
+        }
+        
+        throw new Error(detail || `Submission failed (${response.status})`);
+      }
+
+      if (!responseData?.ticket_id) {
+        throw new Error('Server returned an invalid response. Please try again.');
+      }
+
+      const data = responseData;
       setTicketId(data.ticket_id);
       setStatus('success');
     } catch (err) {
@@ -84,29 +149,38 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
 
   if (status === 'success') {
     return (
-      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+      <div className="max-w-2xl mx-auto card">
         <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="accent-circle mx-auto mb-4">
+            <svg className="accent-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
-          <p className="text-gray-600 mb-4">Your support request has been submitted successfully.</p>
-          <div className="bg-gray-50 rounded-lg p-4 mb-4">
-            <p className="text-sm text-gray-500">Your Ticket ID</p>
-            <p className="text-lg font-mono font-bold text-gray-900">{ticketId}</p>
+          <h2 className="card-title mb-2">Thank You</h2>
+          <p className="card-subtitle mb-4">Your support request has been submitted successfully.</p>
+          <div className="ticket-box mb-4">
+            <p className="ticket-label">Your Ticket ID</p>
+            <p className="ticket-id">{ticketId}</p>
           </div>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm muted">
             Our AI assistant will respond to your email within 5 minutes.
             For urgent issues, responses are prioritized automatically.
           </p>
           <button
             onClick={() => {
               setStatus('idle');
-              setFormData({ name: '', email: '', subject: '', category: 'general', priority: 'medium', message: '' });
+              setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                subject: '',
+                category: 'general',
+                priority: 'medium',
+                message: '',
+                attachment: '',
+              });
             }}
-            className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors cursor-pointer"
+            className="mt-6 btn-primary"
           >
             Submit Another Request
           </button>
@@ -116,14 +190,47 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-gray-900 mb-2">Contact Support</h2>
-      <p className="text-gray-600 mb-6">
+    <div className="max-w-2xl mx-auto card" id="support-form">
+      <h2 className="card-title mb-2">Contact Support</h2>
+      <p className="card-subtitle mb-4">
         Fill out the form below and our AI-powered support team will get back to you shortly.
       </p>
 
+      <div className="toggle-group" role="tablist" aria-label="Support channel">
+        <button
+          type="button"
+          role="tab"
+          aria-selected={channel === 'web'}
+          className={`toggle-btn ${channel === 'web' ? 'is-active' : ''}`}
+          onClick={() => setChannel('web')}
+        >
+          <IconGlobe className="icon icon--sm" />
+          Web Form
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={channel === 'email'}
+          className={`toggle-btn ${channel === 'email' ? 'is-active' : ''}`}
+          onClick={() => setChannel('email')}
+        >
+          <IconMail className="icon icon--sm" />
+          Email Support
+        </button>
+        <button
+          type="button"
+          role="tab"
+          aria-selected={channel === 'whatsapp'}
+          className={`toggle-btn ${channel === 'whatsapp' ? 'is-active' : ''}`}
+          onClick={() => setChannel('whatsapp')}
+        >
+          <IconPhone className="icon icon--sm" />
+          WhatsApp Support
+        </button>
+      </div>
+
       {error && (
-        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+        <div className="mb-4 alert">
           {error}
         </div>
       )}
@@ -131,7 +238,7 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="name" className="label">
             Your Name *
           </label>
           <input
@@ -141,49 +248,86 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="field"
             placeholder="John Doe"
           />
         </div>
 
-        {/* Email */}
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email Address *
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="john@example.com"
-          />
-        </div>
+        {channel === 'whatsapp' ? (
+          <div>
+            <label htmlFor="phone" className="label">
+              WhatsApp Number *
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="field"
+              placeholder="+92 300 1234567"
+            />
+          </div>
+        ) : (
+          <div>
+            <label htmlFor="email" className="label">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="field"
+              placeholder="john@example.com"
+            />
+          </div>
+        )}
 
         {/* Subject */}
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-            Subject *
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Brief description of your issue"
-          />
-        </div>
+        {(channel === 'email' || channel === 'web') && (
+          <div>
+            <label htmlFor="subject" className="label">
+              Subject *
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              className="field"
+              placeholder="Brief description of your issue"
+            />
+          </div>
+        )}
+
+        {channel === 'web' && (
+          <div>
+            <label htmlFor="attachment" className="label">
+              Attachment link (optional)
+            </label>
+            <input
+              type="url"
+              id="attachment"
+              name="attachment"
+              value={formData.attachment}
+              onChange={handleChange}
+              className="field"
+              placeholder="https://drive.google.com/..."
+            />
+            <p className="mt-1 text-sm muted">Upload to Drive/Dropbox and paste a shareable link.</p>
+          </div>
+        )}
 
         {/* Category + Priority */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="category" className="label">
               Category *
             </label>
             <select
@@ -191,7 +335,7 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
               name="category"
               value={formData.category}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="field"
             >
               {CATEGORIES.map((cat) => (
                 <option key={cat.value} value={cat.value}>{cat.label}</option>
@@ -200,7 +344,7 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
           </div>
 
           <div>
-            <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="priority" className="label">
               Priority
             </label>
             <select
@@ -208,7 +352,7 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
               name="priority"
               value={formData.priority}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="field"
             >
               {PRIORITIES.map((pri) => (
                 <option key={pri.value} value={pri.value}>{pri.label}</option>
@@ -219,7 +363,7 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="message" className="label">
             How can we help? *
           </label>
           <textarea
@@ -229,10 +373,10 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
             onChange={handleChange}
             required
             rows={6}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+            className="field field--textarea"
             placeholder="Please describe your issue or question in detail..."
           />
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm muted">
             {formData.message.length}/1000 characters
           </p>
         </div>
@@ -241,11 +385,7 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className={`w-full py-3 px-4 rounded-lg font-medium text-white transition-colors cursor-pointer ${
-            status === 'submitting'
-              ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-blue-600 hover:bg-blue-700'
-          }`}
+          className={`btn-primary btn-block ${status === 'submitting' ? 'is-disabled' : ''}`}
         >
           {status === 'submitting' ? (
             <span className="flex items-center justify-center">
@@ -256,15 +396,77 @@ export default function SupportForm({ apiEndpoint = '/api/support/submit' }) {
               Submitting...
             </span>
           ) : (
-            'Submit Support Request'
+            channel === 'whatsapp' ? 'Start WhatsApp Request' : 'Submit Support Request'
           )}
         </button>
 
-        <p className="text-center text-sm text-gray-500">
+        <p className="text-center text-sm muted">
           By submitting, you agree to our{' '}
-          <a href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</a>
+          <a href="/privacy" className="link">Privacy Policy</a>
         </p>
       </form>
+
+      {channel === 'whatsapp' && (
+        <div className="mt-8 pt-6 divider">
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <div>
+              <h3 className="text-lg font-semibold text-[color:var(--text)]">Prefer WhatsApp?</h3>
+              <p className="text-sm muted">Scan the QR or open a chat to create a ticket.</p>
+            </div>
+            {whatsapp.link && (
+              <a
+                href={whatsapp.link}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost"
+              >
+                Open WhatsApp
+              </a>
+            )}
+          </div>
+
+          {!whatsapp.hasConfig && (
+            <div className="mb-4 alert alert--warning">
+              WhatsApp is not configured yet. Set `VITE_WHATSAPP_NUMBER` (and optional `VITE_WHATSAPP_JOIN_CODE`) to enable.
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="qr-card">
+              {whatsapp.qrSrc ? (
+                <>
+                  <img
+                    src={whatsapp.qrSrc}
+                    alt="WhatsApp QR code"
+                    className="h-40 w-40 rounded-lg border border-[color:var(--border)] bg-white p-2"
+                  />
+                  <p className="mt-3 text-sm muted">Scan to open chat</p>
+                </>
+              ) : (
+                <div className="h-40 w-40 rounded-lg border border-dashed border-[color:var(--border)] bg-white/70 flex items-center justify-center text-xs muted">
+                  QR will appear here
+                </div>
+              )}
+            </div>
+
+            <div className="info-card">
+              <p className="text-sm font-semibold text-[color:var(--text)] mb-2">How it works</p>
+              <div className="space-y-2 text-sm muted">
+                <div>1. Open a chat with: <span className="font-mono text-[color:var(--text)]">{whatsapp.displayNumber}</span></div>
+                {whatsapp.showJoinCode && (
+                  <div>
+                    2. If using Twilio Sandbox, send:{' '}
+                    <span className="font-mono text-[color:var(--text)]">{whatsapp.joinCode || 'join <code>'}</span>
+                  </div>
+                )}
+                <div>3. Send your issue details. We will auto-create a ticket.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {channel === 'whatsapp' && <WhatsAppWidget />}
     </div>
   );
 }
